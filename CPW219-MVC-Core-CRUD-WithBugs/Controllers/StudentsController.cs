@@ -159,6 +159,7 @@ public class StudentsController : Controller
         if (student != null)
         {
             _context.Student.Remove(student);
+            await _context.SaveChangesAsync();
         }
 
         return RedirectToAction(nameof(Index));
