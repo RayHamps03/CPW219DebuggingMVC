@@ -125,6 +125,8 @@ public class StudentsController : Controller
                     throw;
                 }
             }
+            _context.Update(student);
+            await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
         return View(student);
